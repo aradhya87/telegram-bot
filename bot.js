@@ -8,7 +8,13 @@
  *   ✅ Prevent bot replying after KYC approved
  *   ✅ /verify user command added
  *****************************************************************/
-require('dotenv').config();
+
+require('dotenv').config();  // Must be first!
+
+console.log('BOT_TOKEN:', process.env.BOT_TOKEN ? 'Loaded' : 'Not loaded');
+console.log('MONGO_URI:', process.env.MONGO_URI ? 'Loaded' : 'Not loaded');
+console.log('ADMIN_ID:', process.env.ADMIN_ID);
+
 const TelegramBot = require('node-telegram-bot-api');
 const mongoose = require('mongoose');
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
